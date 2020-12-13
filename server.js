@@ -19,9 +19,14 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/whoami", function (req, res) {
-  const language = req.header('Accept-Languge');
-  const dd = req.header('User-Agent');
-  res.json({ langauge});
+  const language = req.header('Accept-language');
+  const software = req.header('User-Agent');
+  const ipaddress = '127.0.0.1';
+  res.json({ 
+    ipaddress,
+    language,
+    software
+  });
 });
 
 // your first API endpoint... 
